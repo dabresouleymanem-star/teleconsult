@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# 🏥 Application de Téléconsultation — FHIR R4
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Projet académique — Master Télémédecine & e-Santé, Université Virtuelle du Burkina Faso.
+Cours : Dr Ing. Lebian Wilfried NIKIEMA — Séquence 5, Séance 3.
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+Application web React permettant la gestion d'une téléconsultation médicale : authentification sécurisée (OAuth2/SMART on FHIR simulé), recherche de dossier patient, création de consultations (Encounter FHIR) et enregistrement de mesures vitales (Observation FHIR), avec protection anti-XSS et accessibilité WCAG AA.
 
-### `npm start`
+## Fonctionnalités
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 🔐 Authentification OAuth2/SMART on FHIR (simulée, token JWT en sessionStorage)
+- 👤 Recherche et affichage de dossier patient (ressource FHIR Patient)
+- 📋 Création de consultation (ressource FHIR Encounter)
+- 📊 Enregistrement de mesures vitales avec codes LOINC (ressource FHIR Observation)
+- 🛡️ Protection anti-XSS via DOMPurify
+- ♿ Accessibilité WCAG AA (labels, aria-*, contrastes)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Stack technique
 
-### `npm test`
+- **Frontend** : React.js, React Router
+- **Serveur FHIR** : HAPI FHIR public (https://hapi.fhir.org/baseR4)
+- **Sécurité** : DOMPurify (anti-XSS)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation et lancement
 
-### `npm run build`
+```bash
+# Cloner le dépôt
+git clone https://github.com/dabresouleymanem-star/teleconsult.git
+cd teleconsult
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Installer les dépendances
+npm install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Créer un fichier .env à la racine avec :
+# REACT_APP_FHIR_BASE_URL=https://hapi.fhir.org/baseR4
+# REACT_APP_CLIENT_ID=teleconsult-demo
+# REACT_APP_REDIRECT_URI=http://localhost:3000/callback
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Lancer l'application
+npm start
+```
 
-### `npm run eject`
+L'application est accessible sur http://localhost:3000
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Utilisation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Se connecter avec n'importe quel nom (authentification simulée)
+2. Rechercher un patient existant sur le serveur HAPI FHIR public
+3. Créer une consultation liée à ce patient
+4. Enregistrer une mesure vitale (tension, température, poids, fréquence cardiaque)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Sécurité
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Le token de session expire après 1h et est stocké en `sessionStorage` (jamais `localStorage`)
+- Toutes les données affichées venant du serveur externe sont nettoyées via `DOMPurify.sanitize()`
+- Aucune clé secrète n'est commitée (voir `.gitignore`)
 
-## Learn More
+## Conformité
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **FHIR R4** : ressources Patient, Encounter, Observation conformes au standard HL7
+- **RGPD** : voir le rapport de conformité dédié
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Auteur
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Projet réalisé dans le cadre du Master Télémédecine & e-Santé — UVBF.
