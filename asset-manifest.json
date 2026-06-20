@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/teleconsult/static/css/main.e6c13ad2.css",
+    "main.js": "/teleconsult/static/js/main.6a856357.js",
+    "static/js/453.68570012.chunk.js": "/teleconsult/static/js/453.68570012.chunk.js",
+    "index.html": "/teleconsult/index.html",
+    "main.e6c13ad2.css.map": "/teleconsult/static/css/main.e6c13ad2.css.map",
+    "main.6a856357.js.map": "/teleconsult/static/js/main.6a856357.js.map",
+    "453.68570012.chunk.js.map": "/teleconsult/static/js/453.68570012.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.6a856357.js"
+  ]
+}
