@@ -1,9 +1,15 @@
 # Application de Téléconsultation - FHIR R4
 **Master Télémédecine & e-Santé - Projet Final**
 
-**Groupe 8 :** 
+**GROUPE 8 :** 
 
-DABRE Souleymane · KOAMA Ahmed Malick dit Rahim · OUEDRAOGO Wendyam Ahmed Arthur · THIOMBIANO Jules
+DABRE Souleymane
+
+KOAMA Ahmed Malick dit Rahim
+
+OUEDRAOGO Wendyam Ahmed Arthur
+
+THIOMBIANO Jules
 
 **Enseignant :** Dr Ing. Lebian Wilfried NIKIEMA
 
