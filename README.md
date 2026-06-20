@@ -1,73 +1,61 @@
 # Application de Téléconsultation - FHIR R4
+**Master Télémédecine & e-Santé - Projet Final**
 
-Projet académique - Master Télémédecine & e-Santé, Université Virtuelle du Burkina Faso.
-Cours : Dr Ing. Lebian Wilfried NIKIEMA
+**Groupe 8 :** 
 
-Membre du GROUPE 8 :
-Groupe 8 :
-DABRE Souleymane
-KOAMA Ahmed Malick dit Rahim
-OUEDRAOGO Wendyam Ahmed Arthur
-THIOMBIANO Jules
+DABRE Souleymane · KOAMA Ahmed Malick dit Rahim · OUEDRAOGO Wendyam Ahmed Arthur · THIOMBIANO Jules
 
-## Description
+**Enseignant :** Dr Ing. Lebian Wilfried NIKIEMA
 
-Application web React permettant la gestion d'une téléconsultation médicale : authentification sécurisée (OAuth2/SMART on FHIR simulé), recherche de dossier patient, création de consultations (Encounter FHIR) et enregistrement de mesures vitales (Observation FHIR), avec protection anti-XSS et accessibilité WCAG AA.
+---
 
-## Fonctionnalités
+## Objectif
 
-- Authentification OAuth2/SMART on FHIR (simulée, token JWT en sessionStorage)
-- Recherche et affichage de dossier patient (ressource FHIR Patient)
-- Création de consultation (ressource FHIR Encounter)
-- Enregistrement de mesures vitales avec codes LOINC (ressource FHIR Observation)
-- Protection anti-XSS via DOMPurify
-- Accessibilité WCAG AA (labels, aria-*, contrastes)
+Développer une application web de téléconsultation conforme au standard FHIR R4, permettant l'authentification sécurisée d'un médecin, la consultation d'un dossier patient, la création d'une consultation et l'enregistrement de mesures vitales.
+
+## Fonctionnalités réalisées
+
+| Fonctionnalité | Statut | Détail technique |
+|---|---|---|
+| Authentification OAuth2 | Validé | Simulée, token JWT (sub, role, scope, exp) en sessionStorage |
+| Dossier patient | Validé  | Recherche et affichage via ressource FHIR `Patient` |
+| Formulaire de consultation | Validé  | Création de ressource FHIR `Encounter` |
+| Mesures vitales | Validé  | Création de ressource FHIR `Observation` avec codes LOINC |
+| Sécurité anti-XSS | Validé  | Nettoyage des données via DOMPurify |
+| Accessibilité | Validé  | Labels, attributs aria-*, conformité WCAG AA |
 
 ## Stack technique
 
-- **Frontend** : React.js, React Router
-- **Serveur FHIR** : HAPI FHIR public (https://hapi.fhir.org/baseR4)
-- **Sécurité** : DOMPurify (anti-XSS)
+React.js · React Router · DOMPurify · Serveur public HAPI FHIR R4 · Déploiement GitHub Pages
 
-## Installation et lancement
+---
 
-```bash
-# Cloner le dépôt
-git clone https://github.com/dabresouleymanem-star/teleconsult.git
-cd teleconsult
+## Les 3 livrables
 
-# Installer les dépendances
-npm install
+### 1. Dépôt Git (code source)
+Dépôt public contenant l'intégralité du code, le README d'installation et le rapport RGPD.
+**Lien :** https://github.com/dabresouleymanem-star/teleconsult
 
-# Créer un fichier .env à la racine avec :
-# REACT_APP_FHIR_BASE_URL=https://hapi.fhir.org/baseR4
-# REACT_APP_CLIENT_ID=teleconsult-demo
-# REACT_APP_REDIRECT_URI=http://localhost:3000/callback
+### 2. Application fonctionnelle (démo en ligne)
+Application déployée et accessible directement, sans installation requise.
+**Lien :** https://dabresouleymanem-star.github.io/teleconsult
 
-# Lancer l'application
-npm start
-```
+*Patient de test disponible : rechercher « SAWADOGO-DEMO » dans le Dossier patient.*
 
-L'application est accessible sur http://localhost:3000
+### 3. Rapport de conformité RGPD
+Document d'une page couvrant : base légale (Art. 9 RGPD), mesures de sécurité, droits des patients, durée de conservation des données.
+**Disponible dans le dépôt :** `RAPPORT_RGPD.md`
 
-## Utilisation
+---
 
-1. Se connecter avec n'importe quel nom (authentification simulée)
-2. Rechercher un patient existant sur le serveur HAPI FHIR public
-3. Créer une consultation liée à ce patient
-4. Enregistrer une mesure vitale (tension, température, poids, fréquence cardiaque)
+## Parcours de démonstration
 
-## Sécurité
+1. Connexion (authentification simulée)
+2. Recherche du patient de test « SAWADOGO-DEMO »
+3. Création d'une consultation (Encounter FHIR)
+4. Enregistrement d'une mesure vitale (Observation FHIR, code LOINC)
+5. Démonstration de la protection anti-XSS (injection de code neutralisée par DOMPurify)
 
-- Le token de session expire après 1h et est stocké en `sessionStorage` (jamais `localStorage`)
-- Toutes les données affichées venant du serveur externe sont nettoyées via `DOMPurify.sanitize()`
-- Aucune clé secrète n'est commitée (voir `.gitignore`)
+---
 
-## Conformité
-
-- **FHIR R4** : ressources Patient, Encounter, Observation conformes au standard HL7
-- **RGPD** : voir le rapport de conformité dédié
-
-## Auteur
-
-Projet réalisé dans le cadre du Master Télémédecine & e-Santé — UVBF.
+*Projet réalisé par le Groupe 8 dans le cadre du Master Télémédecine & e-Santé - UVBF.*
