@@ -1,7 +1,7 @@
 # Rapport de Conformité RGPD
 ## Application de Téléconsultation - FHIR R4
 
-**Auteur :** Groupe 8 : 
+**Auteurs :** Groupe 8 : 
 DABRE Souleymane
 KOAMA Ahmed Malick dit Rahim
 THIOMBIANO Jules
@@ -50,5 +50,5 @@ En cas de violation de données, la procédure prévoit : détection via journal
 
 ---
 
-**Responsable de traitement :** [À compléter — nom de l'établissement simulé]
+**Responsable de traitement :** [GROUP8 — UVBF]
 **Référence académique :** Cours Session_TelemWEB_3.pdf, p.18-21
