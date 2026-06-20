@@ -1,7 +1,14 @@
-# 🏥 Application de Téléconsultation — FHIR R4
+# Application de Téléconsultation - FHIR R4
 
-Projet académique — Master Télémédecine & e-Santé, Université Virtuelle du Burkina Faso.
-Cours : Dr Ing. Lebian Wilfried NIKIEMA — Séquence 5, Séance 3.
+Projet académique - Master Télémédecine & e-Santé, Université Virtuelle du Burkina Faso.
+Cours : Dr Ing. Lebian Wilfried NIKIEMA
+
+Membre du GROUPE 8 :
+Groupe 8 :
+DABRE Souleymane
+KOAMA Ahmed Malick dit Rahim
+OUEDRAOGO Wendyam Ahmed Arthur
+THIOMBIANO Jules
 
 ## Description
 
@@ -9,12 +16,12 @@ Application web React permettant la gestion d'une téléconsultation médicale :
 
 ## Fonctionnalités
 
-- 🔐 Authentification OAuth2/SMART on FHIR (simulée, token JWT en sessionStorage)
-- 👤 Recherche et affichage de dossier patient (ressource FHIR Patient)
-- 📋 Création de consultation (ressource FHIR Encounter)
-- 📊 Enregistrement de mesures vitales avec codes LOINC (ressource FHIR Observation)
-- 🛡️ Protection anti-XSS via DOMPurify
-- ♿ Accessibilité WCAG AA (labels, aria-*, contrastes)
+- Authentification OAuth2/SMART on FHIR (simulée, token JWT en sessionStorage)
+- Recherche et affichage de dossier patient (ressource FHIR Patient)
+- Création de consultation (ressource FHIR Encounter)
+- Enregistrement de mesures vitales avec codes LOINC (ressource FHIR Observation)
+- Protection anti-XSS via DOMPurify
+- Accessibilité WCAG AA (labels, aria-*, contrastes)
 
 ## Stack technique
 
