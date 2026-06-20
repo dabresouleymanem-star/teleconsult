@@ -2,7 +2,7 @@
 import ObservationPage from './pages/ObservationPage';
 import ConsultationPage from './pages/ConsultationPage';
 import PatientPage from './pages/PatientPage';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
 import { isAuthenticated } from './services/authService';
@@ -14,7 +14,7 @@ function PrivateRoute({ children }) {
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route
           path="/observation"
@@ -50,7 +50,7 @@ function App() {
           }
         />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
